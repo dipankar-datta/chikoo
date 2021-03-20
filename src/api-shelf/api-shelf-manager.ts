@@ -33,17 +33,15 @@ export default class ApiStoreManager {
                                 this.shelf.set(key, store);
                             }
 
-                            store.subscriptions.forEach((eventSub: EventSubscription, key: string) => {
+                            store.subscriptions.forEach((eventSub: EventSubscription) => {
                                 if (eventSub) {
                                     if (store) {
                                         eventSub.eventHandler(data);
                                     }
                                 }
                             });
-                        })
-                        .catch(console.error);
-                })
-                .catch(console.error);
+                        });
+                });
         }
     }
 

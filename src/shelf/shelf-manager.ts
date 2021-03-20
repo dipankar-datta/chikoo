@@ -58,7 +58,7 @@ class ShelfManager {
                 this.shelf.set(key, shelf);
             }            
 
-            shelf.subscriptions.forEach((eventSub: EventSubscription, key: string) => {
+            shelf.subscriptions.forEach((eventSub: EventSubscription) => {
                 if (eventSub) {
                     if (shelf) {
                         eventSub.eventHandler(shelf.data);
